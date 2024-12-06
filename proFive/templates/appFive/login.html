@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "appFive/base.html" %}
+{% block body_block %}
+
+    <div class="jumbotron">
+        <h1>Welcome to login page ProjFive</h1>
+        <h2>Please LogIn</h2>
+        <form action="{% url 'appFive:user_login' %}" method="post">
+            {% csrf_token %}
+            <label for="username">UserName:</label>
+            <input type="text" name="username" placeholder="Enter username">
+
+            <label for="password">Password:</label>
+            <input type="password" name="password">
+
+            <input type="submit" value="Login">
+
+        </form>
+
+    </div>
+{% endblock %}
